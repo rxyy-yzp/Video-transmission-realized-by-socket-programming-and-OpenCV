@@ -1,2 +1,6 @@
 # Video-transmission-realized-by-socket-programming-and-OpenCV
-Video transmission realized by socket programming and OpenCV(Computer network)
+Video transmission realized by socket programming and OpenCV(Computer network)  
+1.功能要求  
+由客户端采集摄像头图像后经Socket传输到服务器端并在服务器端显示出来。  
+原理简述：视频图像传输特点：要求传输延时小，实时性高；传输流量大，要求传输效率高，因此希望学生可以尽量设计出延时越小越好的视频传输效果，可以在同一台电脑下实现（在同一台电脑上实验，即同时运行服务器程序和客户端程序，也就是说通过socket编程来实现数据的自发自收），也可以跨局域网实现（延时大大增加），可以对比不同网络下的延迟。难度指数升级：增加实时显示发送速率、平均延迟时间等功能。  
+2.重点内容：首先是视频数据/摄像头图像的采集，设置分辨率，抓取并保存图片。压缩处理过程：没有压缩就传输的同学会发现延迟十分大，且卡顿，视频帧没有经过压缩，而UDP一个包的大小最大为65536B，所以采集到的图像需要长宽缩小几倍才能发送，最高难度部分的基础要求是实现本机运行CS两端，通过回环地址传输数据，可以在客户和服务器两端加入视频数据压缩与解压进行更深层次的探索。  
